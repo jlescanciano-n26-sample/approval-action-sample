@@ -1,0 +1,16 @@
+name: 'Approvals'
+description: 'Watch out for required approvals'
+inputs:
+  token:
+    description: Repository token
+    default: ${{ github.token }}
+  rules:
+    description: Approval rules
+    required: true
+outputs:
+  evaluated-rules:
+    description: 'Number of evaluated rules'
+runs:
+  using: 'node12'
+  main: 'action.js'
+

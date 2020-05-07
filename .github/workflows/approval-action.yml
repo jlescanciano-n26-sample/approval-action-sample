@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Approval Checks
-        uses: jlescanciano/github-action-example@v1
+        uses: ./.github/actions
         with:
           rules: >
             approval:
