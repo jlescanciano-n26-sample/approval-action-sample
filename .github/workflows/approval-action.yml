@@ -22,7 +22,7 @@ jobs:
                   fileSetContains: '^live\/'
                 required:
                   reviewers: [ ]
-                  teams: [ "jlescanciano-n26-sample/default-team", "n26/cant-access" ]
+                  teams: [ "jlescanciano-n26-sample/default-team" ]
               - name: "Required approval for proposal section"
                 min:
                   count: 1
