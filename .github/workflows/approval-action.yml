@@ -1,0 +1,34 @@
+name: PR Approval check
+
+on:
+  pull_request:
+    branches: [ master ]
+  pull_request_review:
+    branches: [ master ]
+
+jobs:
+  check_approvals:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Approval Checks
+        uses: jlescanciano/github-action-example@v1
+        with:
+          rules: >
+            approval:
+              - name: "Required approval for live section"
+                min:
+                  count: 2
+                when:
+                  fileSetContains: '^live\/'
+                required:
+                  reviewers: [ ]
+                  teams: [ "jlescanciano-n26-sample/default-team", "n26/cant-access" ]
+            - name: "Required approval for proposal section"
+                min:
+                  count: 1
+                when:
+                  fileSetContains: '^proposal\/'
+                required:
+                  reviewers: [ ]
+                  teams: [ "jlescanciano-n26-sample/default-team", "n26/cant-access" ]
+
