@@ -23,12 +23,11 @@ jobs:
                 required:
                   reviewers: [ ]
                   teams: [ "jlescanciano-n26-sample/default-team", "n26/cant-access" ]
-            - name: "Required approval for proposal section"
-                min:
-                  count: 1
-                when:
-                  fileSetContains: '^proposal\/'
-                required:
-                  reviewers: [ ]
-                  teams: [ "jlescanciano-n26-sample/default-team", "n26/cant-access" ]
-
+              - name: "Required approval for proposal section"
+                  min:
+                    count: 1
+                  when:
+                    fileSetContains: '^proposal\/'
+                  required:
+                    reviewers: [ ]
+                    teams: [ "jlescanciano-n26-sample/default-team", "n26/cant-access" ]
