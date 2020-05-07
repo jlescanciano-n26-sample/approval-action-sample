@@ -10,10 +10,8 @@ jobs:
   check_approvals:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
       - name: Approval Checks
-        uses: ./
+        uses: jlescanciano/github-action-example@v1
         with:
           token: ${{ secrets.ORG_TOKEN }}
           rules: >
